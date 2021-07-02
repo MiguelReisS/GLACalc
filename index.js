@@ -109,7 +109,7 @@ function handleCalc() {
     const outputSmall = document.getElementById("xpNeededSmall")
     const outputMedium = document.getElementById("xpNeededMedium")
     const outputLarge = document.getElementById("xpNeededLarge")
-    outputSmall.textContent = `${values.xpSmall} pocões pequenas`
+    outputSmall.textContent = `${values.xpSmall} poções pequenas`
     outputMedium.textContent = `${values.xpMedium} poções médias e ${values.restOfMedium} poções pequenas`
     outputLarge.textContent = `${values.xpLarge} poções grandes , ${values.restOfLarge} poções médias e ${values.restOfRemaining} pocões pequenas`
     const audio = document.getElementById("sfx")
