@@ -6,29 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GLA Tools</title>
     <script src="script.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-   <div>
-    <label for="tier">Tier:</label>   
-    <select type="text" id="tier" name="tier">
-        <option value="bronze">bronze</option>
-        <option value="silver">silver</option>
-        <option value="gold">gold</option>
-        <option value="diamond">diamond</option>
-    </select>
-    </div> 
-   <div>
-    <label for="actualLevel">Level atual:</label>   
-    <input type="text" id="actualLevel" name="actualLevel"/>
-    </div> 
-   <div>
-    <label for="desiredLevel">Level desejado:</label>   
-    <input type="text" id="desiredLevel" name="desiredLevel"/>
-    </div> 
-    <button onclick="handleCalc()">Calcular</button>
-    <div><span id="xpNeededSmall"></span></div>
-    <div><span id="xpNeededMedium"></span></div>
-    <div><span id="xpNeededLarge"></span></div>
-    <audio src="denden.mp3" id="sfx"></audio>
+   <div class="container mx-auto">
+       <div class="flex flex-col">
+        <label for="tier">Tier:</label>   
+        <select class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10" type="text" id="tier" name="tier">
+            <option value="bronze">bronze</option>
+            <option value="silver">silver</option>
+            <option value="gold">gold</option>
+            <option value="diamond">diamond</option>
+        </select>
+       </div>
+
+       <div>
+        <label for="actualLevel">Level atual:</label>   
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10" type="text" id="actualLevel" name="actualLevel"/>
+       </div> 
+       <div>
+        <label for="desiredLevel">Level desejado:</label>   
+        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10" type="text" id="desiredLevel" name="desiredLevel"/>
+        </div> 
+        <div class="flex items-center w-full">
+            <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white mt-10 h-10" onclick="handleCalc()">Calcular</button>
+        </div>
+
+        <img id="ruffy" class="h-50 w-40 hidden" src="https://i.pinimg.com/originals/23/b8/cc/23b8ccd4d62a74024e383248389a478b.gif" alt=""/>
+
+        <div>
+            <span id="xpNeededSmall"></span>
+        </div>
+        <div>
+            <span id="xpNeededMedium"></span>
+        </div>
+        <div>
+            <span id="xpNeededLarge"></span>
+        </div>
+        <audio src="denden.mp3" id="sfx"></audio>
+   </div> 
 </body>
 </html>

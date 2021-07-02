@@ -114,5 +114,6 @@ function handleCalc() {
     outputLarge.textContent = `${values.xpLarge} poções grandes , ${values.restOfLarge} poções médias e ${values.restOfRemaining} pocões pequenas`
     const audio = document.getElementById("sfx")
     audio.play()
+    document.getElementById("ruffy").classList.remove("hidden");
 
 }
