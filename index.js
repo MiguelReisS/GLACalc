@@ -77,13 +77,26 @@ const potions = {
     diamond: { small: 500, medium: 5000, large: 50000 },
 }
 function calcPotions(actualLevel, desiredLevel, tier) {
-    const xpSmall = Math.round((levels[desiredLevel] - levels[actualLevel]) / potions[tier].small)
+    const xpSmall = Math.ceil((levels[desiredLevel] - levels[actualLevel]) / potions[tier].small)
+
     const xpMedium = Math.round((levels[desiredLevel] - levels[actualLevel]) / potions[tier].medium)
-    const xpLarge = Math.round((levels[desiredLevel] - levels[actualLevel]) / potions[tier].large)
+    const modXpMedium = Math.round((levels[desiredLevel] - levels[actualLevel]) % potions[tier].medium)
+    const restOfMedium = Math.ceil(modXpMedium / potions[tier].small)
+
+
+    const xpLarge = Math.floor((levels[desiredLevel] - levels[actualLevel]) / potions[tier].large)
+    const modXpLarge = Math.round((levels[desiredLevel] - levels[actualLevel]) % potions[tier].large)
+    const restOfLarge = Math.floor(modXpLarge / potions[tier].medium)
+    const modOfRemaining = modXpLarge % potions[tier].medium
+    const restOfRemaining = Math.ceil(modOfRemaining / potions[tier].small)
+
     const values = {
         xpSmall,
         xpMedium,
         xpLarge,
+        restOfMedium,
+        restOfLarge,
+        restOfRemaining,
     }
     return values
 }
@@ -96,10 +109,10 @@ function handleCalc() {
     const outputSmall = document.getElementById("xpNeededSmall")
     const outputMedium = document.getElementById("xpNeededMedium")
     const outputLarge = document.getElementById("xpNeededLarge")
-    outputSmall.textContent = `${values.xpSmall}`
-    outputMedium.textContent = `${values.xpMedium}`
-    outputLarge.textContent = `${values.xpLarge}`
+    outputSmall.textContent = `${values.xpSmall} pocões pequenas`
+    outputMedium.textContent = `${values.xpMedium} poções médias e ${values.restOfMedium} poções pequenas`
+    outputLarge.textContent = `${values.xpLarge} poções grandes , ${values.restOfLarge} poções médias e ${values.restOfRemaining} pocões pequenas`
     const audio = document.getElementById("sfx")
     audio.play()
-    
+
 }
