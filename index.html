@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+<body>
+   <div>
+    <label for="tier">Tier:</label>   
+    <select type="text" id="tier" name="tier">
+        <option value="bronze">bronze</option>
+        <option value="silver">silver</option>
+        <option value="gold">gold</option>
+        <option value="diamond">diamond</option>
+    </select>
+    </div> 
+   <div>
+    <label for="actualLevel">Level atual:</label>   
+    <input type="text" id="actualLevel" name="actualLevel"/>
+    </div> 
+   <div>
+    <label for="desiredLevel">Level desejado:</label>   
+    <input type="text" id="desiredLevel" name="desiredLevel"/>
+    </div> 
+    <button onclick="handleCalc()">Calcular</button>
+    <div><span id="xpNeededSmall"></span> poções pequenas.</div>
+    <div><span id="xpNeededMedium"></span> poções médias.</div>
+    <div><span id="xpNeededLarge"></span> poções grandes.</div>
+    <audio src="denden.mp3" id="sfx"></audio>
+</body>
+</html>
