@@ -9,41 +9,47 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container mx-auto">
-    <div class="flex flex-col">
-    <label for="tier">Tier:</label>   
-    <select class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10" type="text" id="tier" name="tier">
-        <option value="bronze">bronze</option>
-        <option value="silver">silver</option>
-        <option value="gold">gold</option>
-        <option value="diamond">diamond</option>
-    </select>
-    </div>
+<div class="container mx-auto flex justify-center">
+    <div class="flex flex-col w-2/5 mt-24">
+        <h2 class="font-bold text-center mb-2 text-2xl">Calculadora XP</h2>
 
-    <div>
-        <label for="actualLevel">Level atual:</label>   
-        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10" type="text" id="actualLevel" name="actualLevel"/>
-    </div> 
-
-    <div>
-        <label for="desiredLevel">Level desejado:</label>   
-        <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10" type="text" id="desiredLevel" name="desiredLevel"/>
-    </div> 
-
-    <div class="flex">
-        <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white mt-10 h-10" onclick="handleCalc()">Calcular</button>
-    </div>
-
-    <img id="ruffy" class="h-50 w-40 hidden" src="https://i.pinimg.com/originals/23/b8/cc/23b8ccd4d62a74024e383248389a478b.gif" alt=""/>
-
-    <div>
-        <span id="xpNeededSmall"></span>
-    </div>
-    <div>
-        <span id="xpNeededMedium"></span>
-    </div>
-    <div>
-        <span id="xpNeededLarge"></span>
+        <div class="flex flex-col">
+            <label for="tier">Tier:</label>   
+            <select class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10 h-12" type="text" id="tier" name="tier">
+                <option value="bronze">bronze</option>
+                <option value="silver">silver</option>
+                <option value="gold">gold</option>
+                <option value="diamond">diamond</option>
+            </select>
+        </div>
+    
+        <div class="grid grid-cols-2 gap-10 mt-3">
+            <div>
+                <label for="actualLevel">Level atual:</label>   
+                <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10 mt-2 h-12" type="text" id="actualLevel" name="actualLevel"/>
+            </div> 
+        
+            <div class="">
+                <label for="desiredLevel">Level desejado:</label>   
+                <input class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-10 mt-2 h-12" type="text" id="desiredLevel" name="desiredLevel"/>
+            </div> 
+        </div>
+    
+        <div class="flex justify-center">
+            <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white mt-10 h-12" onclick="handleCalc()">Calcular</button>
+        </div>
+    
+        <img id="ruffy" class="h-50 w-40 hidden" src="https://i.pinimg.com/originals/23/b8/cc/23b8ccd4d62a74024e383248389a478b.gif" alt=""/>
+    
+        <div>
+            <span id="xpNeededSmall"></span>
+        </div>
+        <div>
+            <span id="xpNeededMedium"></span>
+        </div>
+        <div>
+            <span id="xpNeededLarge"></span>
+        </div>
     </div>
     <audio src="denden.mp3" id="sfx"></audio>
 </div> 
