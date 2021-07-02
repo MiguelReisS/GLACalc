@@ -116,5 +116,4 @@ function handleCalc(e) {
     const audio = document.getElementById("sfx")
     audio.play()
     document.getElementById("ruffy").classList.remove("hidden");
-
 }
