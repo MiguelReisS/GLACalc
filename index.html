@@ -15,7 +15,7 @@
 <div class="container mx-auto flex justify-center h-full">
     <div class="flex flex-col w-2/5 mt-24 border rounded-lg p-12 bg-gray-100 fit-box">
         <h2 class="font-bold text-center mb-2 text-4xl">Calculadora XP</h2>
-        <form>
+        <form onsubmit="handleCalc(event)">
             <div class="flex flex-col">
                 <label class="font-semibold" for="tier">Tier:</label>   
                 <select class="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-sm text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-5 h-12 mt-2" type="text" id="tier" name="tier">
@@ -39,7 +39,7 @@
             </div>
         
             <div class="flex justify-center mb-4">
-                <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white mt-10 h-12 bg-blue-500" onclick="handleCalc()">Calcular</button>
+                <button class="w-1/2 flex items-center justify-center rounded-md bg-black text-white mt-10 h-12 bg-blue-500">Calcular</button>
             </div>
         </form>
        

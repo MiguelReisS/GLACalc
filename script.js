@@ -101,7 +101,8 @@ function calcPotions(actualLevel, desiredLevel, tier) {
     return values
 }
 
-function handleCalc() {
+function handleCalc(e) {
+    event.preventDefault();
     const tier = document.getElementById("tier").value
     const actualLevel = document.getElementById("actualLevel").value
     const desiredLevel = document.getElementById("desiredLevel").value
