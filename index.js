@@ -101,8 +101,7 @@ function calcPotions(actualLevel, desiredLevel, tier) {
     return values
 }
 
-function handleCalc(event) {
-    event.preventDefault();
+function handleCalc() {
     const tier = document.getElementById("tier").value
     const actualLevel = document.getElementById("actualLevel").value
     const desiredLevel = document.getElementById("desiredLevel").value
@@ -112,8 +111,8 @@ function handleCalc(event) {
     const outputLarge = document.getElementById("xpNeededLarge")
     outputSmall.textContent = `${values.xpSmall} poções pequenas`
     outputMedium.textContent = `${values.xpMedium} poções médias e ${values.restOfMedium} poções pequenas`
-    outputLarge.textContent = `${values.xpLarge} poções grandes , ${values.restOfLarge} poções médias e ${values.restOfRemaining} pocões pequenas`
+    outputLarge.textContent = `${values.xpLarge} poções grandes , ${values.restOfLarge} poções médias e ${values.restOfRemaining} poções pequenas`
     const audio = document.getElementById("sfx")
     audio.play()
-    document.getElementById("ruffy").classList.remove("hidden");
+
 }
