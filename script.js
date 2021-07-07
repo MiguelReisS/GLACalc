@@ -131,6 +131,11 @@ function handleCalc(event) {
     return;
   }
 
+  if (actualLevel > desiredLevel) {
+    inputError.textContent = "O level atual deve ser maior que o desejado";
+    return;
+  }
+
   const values = calcPotions(actualLevel, desiredLevel, tier);
   const outputSmall = document.getElementById("xpNeededSmall");
   const outputMedium = document.getElementById("xpNeededMedium");
