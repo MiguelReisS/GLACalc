@@ -69,6 +69,11 @@ const levels = {
   68: 4797200,
   69: 5018400,
   70: 5246300,
+  71: 5479296,
+  72: 5722576,
+  73: 5967623,
+  74: 6225050,
+  75: 6489775,
 };
 const potions = {
   bronze: { small: 3000, medium: 30000, large: 300000 },
@@ -122,12 +127,12 @@ function handleCalc(event) {
   const desiredLevel = document.getElementById("desiredLevel").value;
   const inputError = document.getElementById("error");
 
-  if (actualLevel < 1 || actualLevel > 70) {
-    inputError.textContent = "O level atual/desejado deve ser entre 1 e 70";
+  if (actualLevel < 1 || actualLevel > 75) {
+    inputError.textContent = "O level atual/desejado deve ser entre 1 e 75";
     return;
   }
-  if (desiredLevel < 1 || desiredLevel > 70) {
-    inputError.textContent = "O level atual/desejado deve ser entre 1 e 70";
+  if (desiredLevel < 1 || desiredLevel > 75) {
+    inputError.textContent = "O level atual/desejado deve ser entre 1 e 75";
     return;
   }
 
