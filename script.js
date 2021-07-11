@@ -81,7 +81,7 @@ const potions = {
   gold: { small: 1000, medium: 10000, large: 100000 },
   diamond: { small: 500, medium: 5000, large: 50000 },
 };
-function calcPotions(actualLevel, desiredLevel, tier) {
+function calcPotions(actualLevel, xpActual = 0, desiredLevel, tier) {
   const xpSmall = Math.ceil(
     (levels[desiredLevel] - levels[actualLevel]) / potions[tier].small
   );
