@@ -81,7 +81,7 @@ const potions = {
   gold: { small: 1000, medium: 10000, large: 100000 },
   diamond: { small: 500, medium: 5000, large: 50000 },
 };
-function calcPotions(actualLevel, xpActual = 0, desiredLevel, tier) {
+function calcPotions(actualLevel, desiredLevel, tier) {
   const xpSmall = Math.ceil(
     (levels[desiredLevel] - levels[actualLevel]) / potions[tier].small
   );
@@ -117,38 +117,38 @@ function calcPotions(actualLevel, xpActual = 0, desiredLevel, tier) {
 
 function handleCalc(event) {
   event.preventDefault();
-  document.getElementById("xpNeededSmall").textContent = "";
-  document.getElementById("xpNeededMedium").textContent = "";
-  document.getElementById("xpNeededLarge").textContent = "";
-  document.getElementById("error").textContent = "";
+  document.getElementById('xpNeededSmall').textContent = '';
+  document.getElementById('xpNeededMedium').textContent = '';
+  document.getElementById('xpNeededLarge').textContent = '';
+  document.getElementById('error').textContent = '';
 
-  const tier = document.getElementById("tier").value;
-  const actualLevel = document.getElementById("actualLevel").value;
-  const desiredLevel = document.getElementById("desiredLevel").value;
-  const inputError = document.getElementById("error");
+  const tier = document.getElementById('tier').value;
+  const actualLevel = document.getElementById('actualLevel').value;
+  const desiredLevel = document.getElementById('desiredLevel').value;
+  const inputError = document.getElementById('error');
 
   if (actualLevel < 1 || actualLevel > 75) {
-    inputError.textContent = "O level atual/desejado deve ser entre 1 e 75";
+    inputError.textContent = 'O level atual/desejado deve ser entre 1 e 75';
     return;
   }
   if (desiredLevel < 1 || desiredLevel > 75) {
-    inputError.textContent = "O level atual/desejado deve ser entre 1 e 75";
+    inputError.textContent = 'O level atual/desejado deve ser entre 1 e 75';
     return;
   }
 
   if (actualLevel > desiredLevel) {
-    inputError.textContent = "O level atual deve ser maior que o desejado";
+    inputError.textContent = 'O level atual deve ser maior que o desejado';
     return;
   }
 
   const values = calcPotions(actualLevel, desiredLevel, tier);
-  const outputSmall = document.getElementById("xpNeededSmall");
-  const outputMedium = document.getElementById("xpNeededMedium");
-  const outputLarge = document.getElementById("xpNeededLarge");
+  const outputSmall = document.getElementById('xpNeededSmall');
+  const outputMedium = document.getElementById('xpNeededMedium');
+  const outputLarge = document.getElementById('xpNeededLarge');
   outputSmall.textContent = `${values.xpSmall} poções pequenas`;
   outputMedium.textContent = `${values.xpMedium} poções médias e ${values.restOfMedium} poções pequenas`;
   outputLarge.textContent = `${values.xpLarge} poções grandes , ${values.restOfLarge} poções médias e ${values.restOfRemaining} pocões pequenas`;
-  const audio = document.getElementById("sfx");
+  const audio = document.getElementById('sfx');
   audio.play();
-  document.getElementById("ruffy").classList.remove("hidden");
+  document.getElementById('ruffy').classList.remove('hidden');
 }
